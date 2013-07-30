@@ -4,19 +4,29 @@ describe SoaplabXsdInspector::InterfaceDefinition do
 
   describe "interface attributes" do
 
-    subject { SoaplabXsdInspector::InterfaceDefinition.new("spec/support/example1.xsd") }
+    let(:definition) { SoaplabXsdInspector::InterfaceDefinition.new("spec/support/example1.xsd") }
 
     it "must have documentation" do
-      expect(subject.documentation).to eq("input/output types for 'merge_list_of_lmf_files' Web Service")
+      expect(definition.documentation).to eq("input/output types for 'merge_list_of_lmf_files' Web Service")
     end
 
-    it "must have inputs" do
-      expect(subject.inputs).not_to be_empty
+    describe "interface inputs" do
+      subject { definition.inputs }
+
+      it "must have inputs" do
+        expect(subject).not_to be_empty
+      end
     end
 
-    it "must have outputs" do
-      expect(subject.outputs).not_to be_empty
+    describe "interface outputs" do
+      subject { definition.outputs }
+
+      it "must have outputs" do
+        expect(subject).not_to be_empty
+      end
+
     end
+
 
   end
 
