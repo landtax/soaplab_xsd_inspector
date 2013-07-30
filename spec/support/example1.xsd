@@ -1,54 +1,54 @@
 <?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.1.7-b01-. --><xs:schema xmlns:tns="http://soaplab.org/merge_list_of_lmf_files" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:sawsdl="http://www.w3.org/ns/sawsdl" xmlns:emboss="http://emboss.org/common" version="1.0" targetNamespace="http://soaplab.org/merge_list_of_lmf_files">
-	<xs:annotation>
-		<xs:documentation>input/output types for 'merge_list_of_lmf_files' Web Service</xs:documentation>
-	</xs:annotation>
-
-	<xs:import namespace="http://emboss.org/common" schemaLocation="http://ws03.iula.upf.edu:80/soaplab2-axis/typed/services/lexicon_terminology_extraction.merge_list_of_lmf_files?xsd=3" />
-
-	<!-- ****** Inputs ****** -->
-
-	<xs:complexType name="appInputs">
-		<xs:sequence>
-			
-<xs:choice id="input"><xs:annotation>
-    <xs:documentation>list of URLs pointing to LMF files to be merged.</xs:documentation>
+  <xs:annotation>
+    <xs:documentation>input/output types for 'merge_list_of_lmf_files' Web Service</xs:documentation>
   </xs:annotation>
 
+  <xs:import namespace="http://emboss.org/common" schemaLocation="http://ws03.iula.upf.edu:80/soaplab2-axis/typed/services/lexicon_terminology_extraction.merge_list_of_lmf_files?xsd=3" />
 
-<xs:element name="input_direct_data" type="xs:string" />
-<xs:element name="input_url" type="xs:string" />
-</xs:choice>
-				
-		</xs:sequence>
-	</xs:complexType>
+  <!-- ****** Inputs ****** -->
 
-	<!-- ****** Outputs ****** -->
+  <xs:complexType name="appInputs">
+    <xs:sequence>
 
-	<xs:complexType name="appResults">
-		<xs:sequence>
-			<xs:element name="report" minOccurs="0" type="xs:string" />
-				<xs:element name="detailed_status" minOccurs="0" type="xs:long" />
-				<xs:element name="merged_LMF" minOccurs="0" type="xs:string" />
-				<xs:element name="merged_LMF_url" minOccurs="0" type="xs:string" />
-		</xs:sequence>
-	</xs:complexType>
+      <xs:choice id="input"><xs:annotation>
+          <xs:documentation>list of URLs pointing to LMF files to be merged.</xs:documentation>
+        </xs:annotation>
 
-	<xs:element name="run" type="tns:appInputs" />
-	<xs:element name="runAndWaitFor" type="tns:RunAndWaitFor" />
-	<xs:element name="runAndWaitForResponse" type="tns:RunAndWaitForResponse" />
-	<xs:element name="getResultsResponse" type="tns:appResults" />
-	<xs:element name="getSomeResultsResponse" type="tns:appResults" />
-	
-	<xs:complexType name="RunAndWaitFor">
-        <xs:complexContent>
-            <xs:extension base="tns:appInputs" />
-        </xs:complexContent>
-    </xs:complexType>
 
-	<xs:complexType name="RunAndWaitForResponse">
-        <xs:complexContent>
-            <xs:extension base="tns:appResults" />
-        </xs:complexContent>
-    </xs:complexType>
-	
+        <xs:element name="input_direct_data" type="xs:string" />
+        <xs:element name="input_url" type="xs:string" />
+      </xs:choice>
+
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- ****** Outputs ****** -->
+
+  <xs:complexType name="appResults">
+    <xs:sequence>
+      <xs:element name="report" minOccurs="0" type="xs:string" />
+      <xs:element name="detailed_status" minOccurs="0" type="xs:long" />
+      <xs:element name="merged_LMF" minOccurs="0" type="xs:string" />
+      <xs:element name="merged_LMF_url" minOccurs="0" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:element name="run" type="tns:appInputs" />
+  <xs:element name="runAndWaitFor" type="tns:RunAndWaitFor" />
+  <xs:element name="runAndWaitForResponse" type="tns:RunAndWaitForResponse" />
+  <xs:element name="getResultsResponse" type="tns:appResults" />
+  <xs:element name="getSomeResultsResponse" type="tns:appResults" />
+
+  <xs:complexType name="RunAndWaitFor">
+    <xs:complexContent>
+      <xs:extension base="tns:appInputs" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="RunAndWaitForResponse">
+    <xs:complexContent>
+      <xs:extension base="tns:appResults" />
+    </xs:complexContent>
+  </xs:complexType>
+
 </xs:schema>

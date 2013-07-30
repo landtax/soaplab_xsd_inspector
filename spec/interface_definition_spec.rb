@@ -15,7 +15,7 @@ describe SoaplabXsdInspector::InterfaceDefinition do
     end
 
     it "must have outputs" do
-      expect(subject.description).to be_empty
+      expect(subject.outputs).not_to be_empty
     end
 
   end
