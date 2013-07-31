@@ -11,7 +11,7 @@ module SoaplabXsdInspector
       private
 
       def parse_documentation
-        @doc_node.xpath("xs:annotation/xs:documentation", 'xs' => 'http://www.w3.org/2001/XMLSchema').text
+        @doc_node.xpath("xs:annotation/xs:documentation", NS).text
       end
 
     end
