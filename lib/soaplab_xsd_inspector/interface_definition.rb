@@ -4,8 +4,8 @@ module SoaplabXsdInspector
 
     attr_reader :document, :documentation, :inputs, :outputs
 
-    def initialize(xsd_path)
-      @document = Nokogiri::XML(File.read(xsd_path))
+    def initialize(xsd_description)
+      @document = Nokogiri::XML(xsd_description)
       @documentation = parse_documentation
       @inputs = parse_inputs
       @outputs = parse_outputs

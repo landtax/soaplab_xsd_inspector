@@ -4,7 +4,7 @@ describe SoaplabXsdInspector::InterfaceDefinition do
 
   describe "interface attributes" do
 
-    let(:definition) { SoaplabXsdInspector::InterfaceDefinition.new("spec/support/example1.xsd") }
+    let(:definition) { SoaplabXsdInspector::InterfaceDefinition.new(File.read("spec/support/example1.xsd")) }
 
     it "must have documentation" do
       expect(definition.documentation).to eq("input/output types for 'merge_list_of_lmf_files' Web Service")

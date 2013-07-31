@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe SoaplabXsdInspector::Parameter::Choice do
 
-    let(:definition) { SoaplabXsdInspector::InterfaceDefinition.new("spec/support/example1.xsd") }
+    let(:definition) { SoaplabXsdInspector::InterfaceDefinition.new(File.read("spec/support/example1.xsd")) }
     let(:node_choice) { definition.document.xpath("//xs:choice").first }
 
     subject { SoaplabXsdInspector::Parameter::Choice.new(node_choice) }
