@@ -3,7 +3,6 @@ require 'soaplab_xsd_inspector/parameter/base'
 module SoaplabXsdInspector
   module Parameter
     class Element < Base
-      NS = { 'xs' => 'http://www.w3.org/2001/XMLSchema' }
 
       attr_reader :name, :type
 

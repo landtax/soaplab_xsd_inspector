@@ -4,7 +4,6 @@ module SoaplabXsdInspector
 
   module Parameter
     class Choice < Base
-      NS = { 'xs' => 'http://www.w3.org/2001/XMLSchema' }
 
       attr_reader :choices
 

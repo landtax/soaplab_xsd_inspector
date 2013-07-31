@@ -1,9 +1,4 @@
-require "nokogiri"
-require "pry"
-
 module SoaplabXsdInspector
-
-  NS = {'xs' => 'http://www.w3.org/2001/XMLSchema'}
 
   class ParameterList < Array
 

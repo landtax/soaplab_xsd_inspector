@@ -1,10 +1,6 @@
-require "nokogiri"
-require "pry"
-
 module SoaplabXsdInspector
 
   class InterfaceDefinition
-    NS = { 'xs' => 'http://www.w3.org/2001/XMLSchema' }
 
     attr_reader :document, :documentation, :inputs, :outputs
 
