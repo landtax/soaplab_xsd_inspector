@@ -22,7 +22,7 @@ describe SoaplabXsdInspector::InterfaceDefinition do
       subject { definition.outputs }
 
       it "must have outputs" do
-        expect(subject).not_to be_empty
+        expect(subject.size).to eq(4)
       end
 
     end

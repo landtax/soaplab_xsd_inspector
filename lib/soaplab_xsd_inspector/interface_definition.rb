@@ -26,7 +26,7 @@ module SoaplabXsdInspector
     end
 
     def parse_outputs
-      "outputs"
+      SoaplabXsdInspector::ParameterList.new(document.xpath("/xs:schema/xs:complexType[@name='appResults']", NS).first)
     end
 
   end
