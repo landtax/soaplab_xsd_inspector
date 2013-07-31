@@ -14,15 +14,15 @@ module SoaplabXsdInspector
     private
 
     def parse_documentation
-      document.xpath("/xs:schema/xs:annotation/xs:documentation", NS).text
+      document.xpath("/xs:schema/xs:annotation/xs:documentation").text
     end
 
     def parse_inputs
-      SoaplabXsdInspector::ParameterList.new(document.xpath("/xs:schema/xs:complexType[@name='appInputs']", NS).first)
+      SoaplabXsdInspector::ParameterList.new(document.xpath("/xs:schema/xs:complexType[@name='appInputs']").first)
     end
 
     def parse_outputs
-      SoaplabXsdInspector::ParameterList.new(document.xpath("/xs:schema/xs:complexType[@name='appResults']", NS).first)
+      SoaplabXsdInspector::ParameterList.new(document.xpath("/xs:schema/xs:complexType[@name='appResults']").first)
     end
 
   end

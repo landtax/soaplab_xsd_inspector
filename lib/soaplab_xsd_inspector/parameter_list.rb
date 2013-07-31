@@ -11,7 +11,7 @@ module SoaplabXsdInspector
     private
 
     def parse_inputs
-      nodes = @doc_inputs.xpath("xs:sequence/*", NS)
+      nodes = @doc_inputs.xpath("xs:sequence/*")
       nodes.each { |input| 
         self << ParameterFactory.make(input)
       }

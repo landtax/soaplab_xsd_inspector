@@ -8,7 +8,7 @@ module SoaplabXsdInspector
       attr_reader :choices
 
       def initialize(doc_node)
-        @choices = doc_node.xpath("xs:element", NS).map do |element|
+        @choices = doc_node.xpath("xs:element").map do |element|
           SoaplabXsdInspector::ParameterFactory.make(element)
         end
         super

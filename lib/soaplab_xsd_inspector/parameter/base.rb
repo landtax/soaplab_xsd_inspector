@@ -11,7 +11,7 @@ module SoaplabXsdInspector
       private
 
       def parse_documentation
-        @doc_node.xpath("xs:annotation/xs:documentation", NS).text
+        @doc_node.xpath("xs:annotation/xs:documentation").text
       end
 
     end
