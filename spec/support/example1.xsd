@@ -1,4 +1,6 @@
-<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.1.7-b01-. --><xs:schema xmlns:tns="http://soaplab.org/merge_list_of_lmf_files" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:sawsdl="http://www.w3.org/ns/sawsdl" xmlns:emboss="http://emboss.org/common" version="1.0" targetNamespace="http://soaplab.org/merge_list_of_lmf_files">
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.1.7-b01-. -->
+<xs:schema xmlns:tns="http://soaplab.org/merge_list_of_lmf_files" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:sawsdl="http://www.w3.org/ns/sawsdl" xmlns:emboss="http://emboss.org/common" version="1.0" targetNamespace="http://soaplab.org/merge_list_of_lmf_files">
   <xs:annotation>
     <xs:documentation>input/output types for 'merge_list_of_lmf_files' Web Service</xs:documentation>
   </xs:annotation>
@@ -10,7 +12,8 @@
   <xs:complexType name="appInputs">
     <xs:sequence>
 
-      <xs:choice id="input"><xs:annotation>
+      <xs:choice id="input">
+        <xs:annotation>
           <xs:documentation>list of URLs pointing to LMF files to be merged.</xs:documentation>
         </xs:annotation>
 

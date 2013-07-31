@@ -4,6 +4,7 @@ require "pry"
 module SoaplabXsdInspector
 
   class InterfaceDefinition
+    NS = { 'xs' => 'http://www.w3.org/2001/XMLSchema' }
 
     attr_reader :document, :documentation, :inputs, :outputs
 
@@ -17,11 +18,11 @@ module SoaplabXsdInspector
     private
 
     def parse_documentation
-      document.xpath("/xs:schema/xs:annotation/xs:documentation", 'xs' => 'http://www.w3.org/2001/XMLSchema').text
+      document.xpath("/xs:schema/xs:annotation/xs:documentation", NS).text
     end
 
     def parse_inputs
-      "inputs"
+      SoaplabXsdInspector::ParameterList.new(document.xpath("/xs:schema/xs:complexType[@name='appInputs']", NS).first)
     end
 
     def parse_outputs
