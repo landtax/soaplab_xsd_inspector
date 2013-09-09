@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe SoaplabXsdInspector::Parameter::Element do
 
-    let(:definition) { SoaplabXsdInspector::InterfaceDefinition.new(File.read("spec/support/example1.xsd")) }
+    let(:definition) { SoaplabXsdInspector::InterfaceDefinition.new(:xsd_description => File.read("spec/support/example1.xsd")) }
     let(:node_element) { definition.document.xpath("//xs:element").first }
 
     subject { SoaplabXsdInspector::Parameter::Element.new(node_element) }

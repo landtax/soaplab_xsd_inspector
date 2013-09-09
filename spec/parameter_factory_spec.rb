@@ -3,8 +3,8 @@ require 'spec_helper'
 describe SoaplabXsdInspector::ParameterFactory do
 
   describe "factory for creating parameters" do
+    let(:definition) { SoaplabXsdInspector::InterfaceDefinition.new(:xsd_description => File.read("spec/support/example1.xsd")) }
 
-    let(:definition) { SoaplabXsdInspector::InterfaceDefinition.new(File.read("spec/support/example1.xsd")) }
     let(:node_choice) { definition.document.xpath("//xs:choice").first }
     let(:node_element) { definition.document.xpath("//xs:element").first }
 
